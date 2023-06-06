@@ -71,6 +71,7 @@ export default function SignIn() {
               label="Beni hatırla"
             />
              <NavLink to="/" className="text">
+            
             <Button
               type="submit"
               fullWidth
@@ -80,6 +81,7 @@ export default function SignIn() {
               Giriş Yap
             </Button>
             </NavLink>
+            
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">

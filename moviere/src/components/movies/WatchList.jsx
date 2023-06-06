@@ -18,6 +18,7 @@ function WatchList(){
     setTitle(item.title)
     setTrailer(!trailer)
   }
+  
   return (
     <Fragment>
     <div className={toggle ? "mainBgColor" : 'secondaryBgColor'}>
@@ -31,7 +32,7 @@ function WatchList(){
               <Fragment key = {item.id} >
                 <div id={trailer ? 'container' : 'NoContainer'}> 
                   <AiFillPlayCircle color='#fff' fontSize={40} id={trailer ? "playIcon" : 'hide'} onClick={() => MoviesTitle(item)}></AiFillPlayCircle>
-                  <AiFillMinusCircle color='#fff' fontSize={40} id={trailer ? "playIcon1" : 'hide'} onClick={() => removeFromMovies(item._id)}></AiFillMinusCircle>
+                  <AiFillMinusCircle color='#fff' fontSize={40} id={trailer ? "playIcon1" : 'hide'} onClick={() => removeFromMovies(item.id)}></AiFillMinusCircle>
                   <NavLink to={`/Detail/${item.id}`}>
                   <img src={item.poster_path ? `${Images}${item.poster_path}` : NoImg} alt=''></img>
                   </NavLink>

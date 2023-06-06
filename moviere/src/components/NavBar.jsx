@@ -17,6 +17,7 @@ import TVDetail from './tv/TVDetail'
 import {useMovies} from "./movies/MoviesContext";
 import TvWatchList from './tv/TvWatchList'
 import { useTv } from './tv/TvContext'
+import Error404 from '../pages/Error404'
 
 export const Container = React.createContext()
 
@@ -30,6 +31,7 @@ return (
     <Fragment>
       <nav className={toggle ? '' : 'navBarColor'} >
         <div className='nav-options' >
+          <img className='resim' src='favicon.ico' alt='' ></img>
           <h1 id={toggle ? '' : 'heading'}>MOVİéRE</h1>
           <NavLink to=""  style={({isActive}) => {return {color:isActive ? '#fff' : '#EE9B00'}}}>
           <span id={toggle ? 'Movies' : 'MoviesLight'}>Filmler</span>
@@ -72,6 +74,7 @@ return (
         <Route path='SignUp' element={<SignUp/>}></Route>
         <Route path='Communication' element={<Communication/>}></Route>
         <Route path='Settings' element={<Settings/>}></Route>
+        <Route path='*'element={<Error404></Error404>}></Route>
       </Routes>
     </Fragment>
     </Container.Provider>

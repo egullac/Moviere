@@ -8,6 +8,8 @@ import NoImg from '../NoImage.jpg'
 import "../../Styles/Videos.css";
 import "../../Styles/Detail.css";
 import { useParams } from 'react-router-dom';
+import { Rating } from '@mui/material';
+import Reviews from './Reviews';
 
 const Detail = () => {
   const [currentMovieDetail, setMovie] = useState()
@@ -87,12 +89,15 @@ const fetchVideo = async () => {
                             }>
                             FRAGMANI İZLE
                             </Button>
+                            <p className="txt" style={{color: "#5d5a1f"}}>Oylayınız..</p>
+                            <Rating></Rating>
+                            <Reviews></Reviews>
                         </div>
                     </div>
                 </div>
             </div>
             <h1 className="txt" style={{color: "#5d5a1f"}}>Başrol Oyuncuları</h1>
-            <Carousel />  
+            <Carousel />
         </div>
     </div>
   )

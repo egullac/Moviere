@@ -29,6 +29,7 @@ function Movies () {
     const results = data.data.results
     setMoviesData(results)
   }
+
   useEffect(() => {
     setTimeout(() => {
       MovieCall()
@@ -38,7 +39,8 @@ function Movies () {
   const MoviesTitle = (movie) => {
     setMovieTitle(movie.title)
     setTrailer(!trailer)
-  } 
+  }
+  
   
   return (
     <Fragment>
@@ -49,7 +51,7 @@ function Movies () {
             <Fragment key = {movie.id} >
               <div id={trailer ? 'container' : 'NoContainer'} >
               <AiFillPlayCircle color='#fff' fontSize={40} id={trailer ? "playIcon" : 'hide'} onClick={() => MoviesTitle(movie)}></AiFillPlayCircle>
-              <AiFillPlusCircle  color="#fff" fontSize={40} id={trailer ? "playIcon1" : 'hide'} onClick={() => addToMovies(movie)}></AiFillPlusCircle>
+                <AiFillPlusCircle  color={"#fff"} fontSize={40} id={trailer ? "playIcon1" : 'hide'} onClick={() => addToMovies(movie)}></AiFillPlusCircle>
               <NavLink to={`/Detail/${movie.id}`}>
                 <img src={movie.poster_path ? `${Images}${movie.poster_path}` : NoImg} alt=''></img>
               </NavLink>

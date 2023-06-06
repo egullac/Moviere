@@ -5,10 +5,16 @@ nav{
     background-color: #000000;
     align-items: center;
 }
+
 nav h1{
     color: #fff200;
-    margin-left: 40px;
+    margin-left: 30px;
     text-transform: uppercase;
+}
+nav .resim{
+    margin-left: 20px;
+    height: 50px;
+    width: 80px;
 }
 nav a{
     text-decoration: none;
@@ -25,6 +31,7 @@ nav span:hover{
     border-bottom: 2px solid  #c3bd4f;
     padding-bottom: 5px;
 }
+
 span  #MoviesLight{
     color: #ffffff;
 }

@@ -1,18 +1,20 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext,useEffect } from "react";
 const TvContext = createContext();
 
-const TvProvider =({children}) => {
-    const [itms, setItems] = useState([]);
+const defaultTV = JSON.parse(localStorage.getItem("tv")) || [];
 
-    const addToTv = (data, findTvItem) => {
-        if (!findTvItem) {
-            return setItems((items) => [data, ...items]);
-        }
-        const filtered = itms.filtered((item) => item._id !== findTvItem._id);
-        setItems(filtered);
+const TvProvider =({children}) => {
+    const [itms, setItems] = useState(defaultTV);
+
+    useEffect(() => {
+        localStorage.setItem("tv",JSON.stringify(itms));
+    },[itms]);
+
+    const addToTv = (data) => {
+        setItems((prev) => [...prev,data]);
     };
     const removeFromTv = (item_id) =>{
-        const filtered = itms.filter((item)=>item._id !== item_id);
+        const filtered = itms.filter((item)=>item.id !== item_id);
         setItems(filtered);
     };
 

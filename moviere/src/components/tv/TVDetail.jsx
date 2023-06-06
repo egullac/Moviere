@@ -8,6 +8,8 @@ import NoImg from '../NoImage.jpg'
 import "../../Styles/Videos.css";
 import "../../Styles/Detail.css";
 import { useParams } from 'react-router-dom';
+import { Rating } from '@mui/material';
+import Reviews from '../movies/Reviews';
 
 const TVDetail = () => {
   const [currentMovieDetail, setMovie] = useState()
@@ -86,7 +88,10 @@ const fetchVideo = async () => {
                                 href={`https://www.youtube.com/watch?v=${video}`
                             }>
                             FRAGMANI İZLE
-                            </Button>
+                            </Button> 
+                            <p className="txt" style={{color: "#5d5a1f"}}>Oylayınız..</p>
+                           <Rating></Rating> 
+                           <Reviews></Reviews>
                         </div>
                     </div>
                     

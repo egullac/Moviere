@@ -1,0 +1,16 @@
+label{
+    font-size: 25px;
+}
+input{
+    width: 350px;
+    height: 60px;
+    border-radius: 5px;
+}
+button{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(210, 22, 53);
+}

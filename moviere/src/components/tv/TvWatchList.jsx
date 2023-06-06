@@ -31,7 +31,7 @@ function TvWatchList(){
               <Fragment key = {shows.id} >
                 <div id={trailer ? 'container' : 'NoContainer'}> 
                   <AiFillPlayCircle color='#fff' fontSize={40} id={trailer ? "playIcon" : 'hide'} onClick={() => TvShowTitle(shows)}></AiFillPlayCircle>
-                  <AiFillMinusCircle color='#fff' fontSize={40} id={trailer ? "playIcon1" : 'hide'} onClick={() => removeFromTv(shows._id)}></AiFillMinusCircle>
+                  <AiFillMinusCircle color='#fff' fontSize={40} id={trailer ? "playIcon1" : 'hide'} onClick={() => removeFromTv(shows.id)}></AiFillMinusCircle>
                   <NavLink to={`/TvDetail/${shows.id}`}>
                   <img src={shows.poster_path ? `${Images}${shows.poster_path}` : NoImg} alt=''></img>
                   </NavLink>

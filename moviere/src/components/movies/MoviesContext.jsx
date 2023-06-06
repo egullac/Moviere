@@ -1,19 +1,20 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext ,useEffect, Children} from "react";
 const MoviesContext = createContext();
 
-const MoviesProvider =({children}) => {
-    const [items, setItems] = useState([]);
+const defaultMovies = JSON.parse(localStorage.getItem("data")) || [];
 
-    const addToMovies = (data, findMoviesItem) => {
-        if (!findMoviesItem) {
-            return setItems((items) => [data, ...items]);
-        }
-        const filtered = items.filtered((item) => item._id !== findMoviesItem._id);
-        console.log (filtered);
-        setItems(filtered);
+const MoviesProvider =({children}) => {
+    const [items, setItems] = useState(defaultMovies);
+
+    useEffect(() => {
+        localStorage.setItem("data",JSON.stringify(items));
+    },[items]);
+
+    const addToMovies = (data) => {
+        setItems((prev) => [...prev,data]);
     };
     const removeFromMovies = (item_id) =>{
-        const filtered = items.filter((item)=>item._id !== item_id);
+        const filtered = items.filter((item)=>item.id !== item_id);
         setItems(filtered);
     };
 

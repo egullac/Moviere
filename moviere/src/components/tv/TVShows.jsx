@@ -40,7 +40,6 @@ function TVShows () {
     setTitle(shows.name)
     setTrailer(!trailer)
   }
-
   return (
     <Fragment>
       <div className={toggle ? "mainBgColor" : 'secondaryBgColor'}>
